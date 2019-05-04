@@ -13,17 +13,8 @@ class ProfileController extends Controller
         return view('admin.profile.create');
     }
 
-    public function create()
+    public function edit()
     {
-        return redirect('admin/prifile/create');
+        return view('admin.profile.edit');
     }
-
-    puvlic function edit()
-    {
-        return view('admin.profole.edit');
-    }
-
-    public function update()
-    {
-        return redirect('admin/profile/edit');
-    }
+}
