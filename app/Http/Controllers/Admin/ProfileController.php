@@ -18,7 +18,7 @@ class ProfileController extends Controller
         return redirect('admin/prifile/create');
     }
 
-    puvlic function edit()
+    public function edit()
     {
         return view('admin.profole.edit');
     }
@@ -27,3 +27,4 @@ class ProfileController extends Controller
     {
         return redirect('admin/profile/edit');
     }
+  }
