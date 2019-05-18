@@ -26,5 +26,25 @@ class ProfileController extends Controller
     public function update()
     {
         return redirect('admin/profile/edit');
+
+        $this->validate($request, News::$rules);
+
+      $news = new News;
+      $form = $request->all();
+
+      if (isset($form['image'])) {
+        $path = $request->file('image')->store('public/image');
+        $news->image_path = basename($path);
+      } else {
+          $news->image_path = null;
+      }
+      unset($form['_token']);
+
+     unset($form['image']);
+
+     $news->fill($form);
+     $news->save();
+
+     return redirect('admin/profile/create');
     }
   }
