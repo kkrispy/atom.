@@ -6,9 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Profile extends Model
 {
+  protected $guard = array('id');
     //
-    ublic static $rules = array(
-        'title' => 'required',
-        'body' => 'required',
+    public static $rules = array(
+        'name' => 'required',
+        'gender' => 'required',
+        'hobby' => 'required',
+        'introduction' => 'required'
     );
 }
