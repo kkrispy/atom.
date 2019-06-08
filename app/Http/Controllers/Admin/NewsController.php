@@ -76,4 +76,13 @@ public function update(Request $request)
 
     return redirect('admin/news');
   }
+
+  public function delete(Request $request)
+  {
+
+    $nesw = News::find($request->id);
+    $news->delete();
+    return redirect('admin/news/');
+  }
+  
 }
